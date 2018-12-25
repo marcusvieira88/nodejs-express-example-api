@@ -1,6 +1,6 @@
 # Introduction
 
-This example backend API, this project is used as example in my blog (https://marcusvieira.tech) tutorials.
+This NodeJs backend API, this project is used as example in my blog (https://marcusvieira.tech) tutorials.
 
 ## Frameworks
 
@@ -25,8 +25,8 @@ npm start
 
 ## Api
 
-| Method | Resource 		                 | Description                             |
+| Method | Resource 		                     | Description                             |
 |--------|-----------------------------------|-----------------------------------------|
 | GET    | /index                            | return info if app is running           | 
-| GET    | /users                            | simulate a return of users list         | 
+| GET    | /users                            | return a fake users list                | 
 
