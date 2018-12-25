@@ -24,6 +24,11 @@ npm install
 ```
 npm start
 ```
+## Check if app is running
+
+```
+http://localhost:3000/
+```
 
 ## Api
 
