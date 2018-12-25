@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
       "name": "Cathy Lyons",
       "email": "cathylyons@terrasys.com"
     },
-    {
+    { 
       "id": "5c22194395d3b881c6078909",
       "name": "Gilda Cochran",
       "email": "gildacochran@terrasys.com"
