@@ -1,7 +1,7 @@
 var Helpers = require('../utils/Helpers');
 var UserModel = require('../models/UserSchema');
 
-export default class UserService {
+class UserService {
 
     static async getById(userId) {
         return UserModel.findOne({_id: userId, deleted_at:{$exists: false}})
@@ -60,3 +60,4 @@ export default class UserService {
     }
 }
 
+module.exports = UserService;

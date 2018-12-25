@@ -6,10 +6,12 @@ This NodeJs backend API, this project is used as example in my blog (https://mar
 
 The frameworks used are:
 
+* [bcrypt](https://github.com/kelektiv/node.bcrypt.js) - Hash passwords
 * [body-parser](https://github.com/expressjs/body-parser) - Parse request Bodies
-* [express](https://github.com/expressjs/express) - Web framework
 * [debug](https://github.com/visionmedia/debug) - Debug format data
-* [morgan](https://github.com/expressjs/morgan) - Logger app data 
+* [express](https://github.com/expressjs/express) - Web framework
+* [mongoose](https://github.com/Automattic/mongoose) - MongoDB model and access
+* [morgan](https://github.com/expressjs/morgan) - Logger app data
 
 ## Install
 
@@ -27,6 +29,9 @@ npm start
 
 | Method | Resource 		                     | Description                             |
 |--------|-----------------------------------|-----------------------------------------|
-| GET    | /index                            | return info if app is running           | 
-| GET    | /users                            | return a fake users list                | 
-
+| GET    | /index                            | return info if app is running           |
+| GET    | /users                            | return all users                        |
+| POST   | /users/                           | create a new user                       |
+| GET	   | /users/:id  	                     | return a user  	                       |
+| PUT	   | /users/{id}                       | update a user        	                 |
+| DELETE | /users/{id}                       | delete a user      	                   |

@@ -1,6 +1,6 @@
 var bcrypt = require('bcrypt');
 
-export default class Helpers {
+class Helpers {
 
     /**
      * Generate the hash based in a provided value
@@ -23,5 +23,4 @@ export default class Helpers {
     }
 }
 
-
-
+module.exports = Helpers;

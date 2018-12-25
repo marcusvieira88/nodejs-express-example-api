@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var UserBusiness = require('../business/UserBusiness');
 
 router.get('/', async function(req, res, next) {
   try {
-      const users = await UserController.getAll(req);
+      const users = await UserBusiness.getAll(req);
       res.status(200).json(users);
   } catch (error) {
       next(error);
@@ -12,7 +13,7 @@ router.get('/', async function(req, res, next) {
 
 router.post('/', async function(req, res, next) {
   try {
-      const user = await UserController.create(req);
+      const user = await UserBusiness.create(req);
       res.status(200).json(user);
   } catch (error) {
       next(error);
@@ -22,7 +23,7 @@ router.post('/', async function(req, res, next) {
 router.route('/:id')
   .get(async function(req, res, next) {
       try {
-          const user = await UserController.getById(req.params.id);
+          const user = await UserBusiness.getById(req.params.id);
           res.status(200).json(user);
       } catch (error) {
           next(error);
@@ -31,7 +32,7 @@ router.route('/:id')
 
   .put(async function(req, res, next) {
       try {
-          const user = await UserController.update(req);
+          const user = await UserBusiness.update(req);
           res.status(200).json(user);
       } catch (error) {
           next(error);
@@ -40,7 +41,7 @@ router.route('/:id')
 
   .delete(async function(req, res, next) {
       try {
-          const user = await UserController.deleteById(req.params.id);
+          const user = await UserBusiness.deleteById(req.params.id);
           res.status(200).json(user);
       } catch (error) {
           next(error);

@@ -18,8 +18,7 @@ const UserSchema = new mongoose.Schema({
             type: String,
             maxlength: 100,
             minlength: 0,
-            required: true,
-            unique: true
+            required: true
         },
         deleted_at: {
             type: Date
@@ -29,8 +28,5 @@ const UserSchema = new mongoose.Schema({
         timestamps: true //generate the createAt and updateAt
     }
 );
-
-UserSchema.index({deleted_at: 1});
-UserSchema.index({email: 1, deleted_at: 1});
 
 module.exports = mongoose.model('User', UserSchema);

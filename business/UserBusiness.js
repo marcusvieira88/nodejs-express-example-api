@@ -1,6 +1,6 @@
 var UserService = require('../services/UserService');
 
-export default class UserBusiness {
+class UserBusiness {
 
     static async getById(userId) {
         return await UserService.getById(userId);
@@ -27,3 +27,4 @@ export default class UserBusiness {
     };
 }
 
+module.exports = UserBusiness;
