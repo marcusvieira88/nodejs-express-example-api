@@ -1,30 +1,50 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET FAKE users listing. */
-router.get('/', function(req, res, next) {
-  res.send([
-    {
-      "id": "5c2219437b64577e1ea31382",
-      "name": "Cathy Lyons",
-      "email": "cathylyons@terrasys.com"
-    },
-    { 
-      "id": "5c22194395d3b881c6078909",
-      "name": "Gilda Cochran",
-      "email": "gildacochran@terrasys.com"
-    },
-    {
-      "id": "5c22194338be8f7d7c281473",
-      "name": "Albert Combs",
-      "email": "albertcombs@terrasys.com"
-    },
-    {
-      "id": "5c221943e9915f46817133d4",
-      "name": "Jeanine Buckley",
-      "email": "jeaninebuckley@terrasys.com"
-    }
-  ]);
+router.get('/', async function(req, res, next) {
+  try {
+      const users = await UserController.getAll(req);
+      res.status(200).json(users);
+  } catch (error) {
+      next(error);
+  }
 });
+
+router.post('/', async function(req, res, next) {
+  try {
+      const user = await UserController.create(req);
+      res.status(200).json(user);
+  } catch (error) {
+      next(error);
+  }
+});
+
+router.route('/:id')
+  .get(async function(req, res, next) {
+      try {
+          const user = await UserController.getById(req.params.id);
+          res.status(200).json(user);
+      } catch (error) {
+          next(error);
+      }
+  })
+
+  .put(async function(req, res, next) {
+      try {
+          const user = await UserController.update(req);
+          res.status(200).json(user);
+      } catch (error) {
+          next(error);
+      }
+  })
+
+  .delete(async function(req, res, next) {
+      try {
+          const user = await UserController.deleteById(req.params.id);
+          res.status(200).json(user);
+      } catch (error) {
+          next(error);
+      }
+  });
 
 module.exports = router;

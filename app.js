@@ -1,11 +1,11 @@
 var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var logger = require( 'morgan');
+var cookieParser = require( 'cookie-parser');
+var bodyParser = require( 'body-parser');
+var DatabaseConnection = require( './utils/DatabaseConnection');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+//Connect to the database
+new DatabaseConnection().connect();
 
 var app = express();
 
@@ -14,6 +14,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+//set routes
+var index = require('./routes/index');
+var users = require('./routes/users');
 app.use('/', index);
 app.use('/users', users);
 
