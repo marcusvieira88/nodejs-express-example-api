@@ -1,6 +1,6 @@
 # Introduction
 
-This NodeJs,ExpressJs and MongoDB backend API, this project is used as example in my blog (https://marcusvieira.tech) tutorials.
+This is a NodeJs,ExpressJs and MongoDB backend API, it is used as example in my blog (https://marcusvieira.tech) tutorials.
 
 ## Install
 
