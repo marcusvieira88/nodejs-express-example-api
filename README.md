@@ -1,6 +1,6 @@
 # Introduction
 
-This is a NodeJs,ExpressJs and MongoDB backend API, it is used as example in my [blog tutorials](https://marcusvieira.tech/2018/12/25/how-to-create-a-docker-image-and-publish-to-docker-hub/).
+This is a NodeJs,ExpressJs and MongoDB backend API.
 
 ## Install
 
